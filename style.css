@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav ul li a{
+   display: flex;  
+   justify-content: center;
+   text-decoration: none;
+}
+
+
+div{    
+    width: 30%;
+    height: 20%;
+    margin: 4%;
+    padding: 4%;
+    border: solid 3px black;
+    text-align: center;
+    background-color: rgba(233, 180, 189, 0.897);
+
+}
+
+section{
+    display: flex;    
+    flex-wrap: wrap;
+}
+
+
+#formulario{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+#divtrans{
+    align-self: center;
+    width: 450px;
+    height: 450px;
+    border: solid 5px crimson;
+}

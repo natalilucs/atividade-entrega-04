@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Eventos, animações e efeitos</title>
+</head>
+<body>
+    <!-- 1) Criar uma página que possua 5 divs, 3 botões, 1 formulário contendo 5 campos de texto(Nome, endereço, telefone, email e cpf) , e 1 select contendo opções de estados do Brasil (Pelo menos 10 estados) e um botão de enviar. Faça o que se pede abaixo:
+
+    - Ao clicar no primeiro botão, as 5 divs devem aparecer com cores diferentes, largura e altura diferentes e com um efeito que você aprendeu em Jquery (Á sua escolha) //
+    
+    - Ao clicar no segundo botão, todas as divs deverão ficar com a cor azul, largura de 300px e altura de 150px.//
+    
+    - Ao dar um duplo clique no terceiro botão, você deverá esconder duas divs à sua escolha, também utilizando um efeito do Jquery.//
+    
+    - Coloque um foco nos campos do formulário com uma cor agradável ao usuário, e ao tirar o foco do campo de formulário remova esse efeito.
+    
+    - Pegue o valor do nome e do email do usuário e apresente na tela em uma tag de span os dados que foram digitados pelo usuário.
+    
+    2) Crie uma página contendo uma div e aplique todos os efeitos que você aprender durante a aula(Hide(), show(), toggle(), fadeIn(), fadeOut(), fadeTo(), fadeToggle(), slideUp(), slideDown(), slideToggle() -->
+
+    
+    <nav>
+        <ul>
+            <li><a href="">INICIO</a></li>
+            <li><a href="#formulario">FORMULARIO</a></li>
+            <li><a href="index02.html" target="_blank">PAGINA DIV</a></li>
+        </ul>
+    </nav>
+
+<section>
+    <div id="campo1" class="esconde"><p>1</p></div>
+    <div id="campo2"><p>2</p></div>
+    <div id="campo3"><p>3</p></div>
+    <div id="campo4"><p>4</p></div>
+    <div id="campo5" class="esconde"><p>5</p></div>   
+</section>
+
+
+<button id="btn1">BTN 1</button>
+<button id="btn2">BTN 2</button>
+<button id="btn3">BTN 3</button>
+
+
+
+    <form id="formulario">
+        <label>nome</label>
+        <input type="text" id="input1">       
+        
+        <label>endereço</label>
+        <input type="text" id="input2">
+
+        <label>telefone</label>
+        <input type="text" id="input3">
+
+        <label>email</label>
+        <input type="text" id="input4">
+
+        <label>cpf</label>
+        <input type="text" id="input5" >
+
+    </form>
+
+        <select>
+            <h4>De onde você é?</h4>
+            <h4>Disponível</h4>
+            <option>Goiás</option>
+            <option>Mato Grosso</option>
+            <option>Mato Grosso do Sul</option>
+            <option>Distrito Federal</option>
+            <option>Paraná</option>
+            <option>Rio Grande do Sul</option>
+            <option>Santa Catarina</option>        
+            <option>São Paulo</option>
+            <option>Minas Gerais</option>
+            <option>Espirito Santo</option>
+            <option>Rio de Janeiro</option>
+            
+        </select>
+
+        <input type="button" id="enviar" value="enviar">
+
+
+
+
+    <script type="text/javascript">
+    // Ao clicar no primeiro botão, as 5 divs devem aparecer com cores diferentes, largura e altura diferentes e com um efeito que você aprendeu em Jquery (Á sua escolha)
+    
+    $("#btn1").click(function(){
+        $("#campo1").css({backgroundColor: "violet"}).width("230px").height("215px").fadeOut(5000).fadeIn(5000);
+        $("#campo2").css({backgroundColor: "lightblue"}).width("310px").height("480px").slideToggle(1000).slideDown(1000);
+        $("#campo3").css({backgroundColor: "crimson"}).width("450px").height("250px").slideDown(1000);
+        $("#campo4").css({backgroundColor: "pink"}).width("200px").height("350px").fadeTo("slow", 0.10);
+        $("#campo5").css({backgroundColor: "blue"}).width("40px").height("95px").animate({ width: "40%", opacity: 0.6, borderWidth: "3px" }, 1500);
+    })
+
+    //Ao clicar no segundo botão, todas as divs deverão ficar com a cor azul, largura de 300px e altura de 150px.
+
+    $("#btn2").click(function(){
+        $("div").css({backgroundColor: "blue"}).width("300px").height("150px")   
+    })
+
+    // - Ao dar um duplo clique no terceiro botão, você deverá esconder duas divs à sua escolha, também utilizando um efeito do Jquery.
+
+
+    $("#btn3").dblclick(function(){
+        $("#btn3").mouseover().css({backgroundColor: "red"})
+        $(".esconde").hide();  
+    })  
+
+    
+    // - Coloque um foco nos campos do formulário com uma cor agradável ao usuário, e ao tirar o foco do campo de formulário remova esse efeito.
+
+    $(function () {
+        $("input").hover(
+          function () {            
+            $(this).css("background", "grey");
+          },
+          function () {            
+            $(this).css("background", "pink");
+          }
+        );
+      });
+
+          // $(document).on(function(){
+    //     $("[input]").click().css({backgroundColor: "grey"})          
+    // })  
+
+    //   $("input").bind("dblclick", function () {
+    //       if("input" != ""){
+    //         $("input").css({ backgroundColor: "green"});
+    //     }
+    //   });       
+        
+    
+    // - Pegue o valor do nome e do email do usuário e apresente na tela em uma tag de span os dados que foram digitados pelo usuário.
+
+    
+    $("#enviar").click(function(){
+        var nome = $("#input1").val();
+        var email = $("#input4").val();
+        $("#dados").append(nome + " " + email);
+        alert(nome + " " + email);
+    });
+    
+
+
+    
+    // 2) Crie uma página contendo uma div e aplique todos os efeitos que você aprender durante a aula(Hide(), show(), toggle(), fadeIn(), fadeOut(), fadeTo(), fadeToggle(), slideUp(), slideDown(), slideToggle()
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

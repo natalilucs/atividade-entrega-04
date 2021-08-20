@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery-js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Eventos, animações e efeitos</title>
+</head>
+<body>
+
+    <!-- 2) Crie uma página contendo uma div e aplique todos os efeitos que você aprender durante a aula(Hide(), show(), toggle(), fadeIn(), fadeOut(), fadeTo(), fadeToggle(), slideUp(), slideDown(), slideToggle() -->
+    
+    <button id="btn1">Hide</button>
+    <button id="btn2">Show</button>
+    <button id="btn3">Toggle</button>
+    <button id="btn4">FadeIn</button>
+    <button id="btn5">FadeOut</button>
+    <button id="btn6">FadeTo</button>
+    <button id="btn7">FadeToggle</button>
+    <button id="btn8">SlideUp</button>
+    <button id="btn9">SlideDown</button>
+    <button id="btn10">SlideToggle</button>
+
+
+    <div id="divtrans"></div>
+
+    <script type="text/javascript">
+
+    $("#btn1").click(function(){
+        $("div").css({backgroundColor: "red"}).hide();
+    });
+
+    $("#btn2").click(function(){
+        $("div").css({backgroundColor: "black"}).show();
+    });
+
+    $("#btn3").click(function(){
+        $("div").css({backgroundColor: "crimson"}).toggle(2000);
+    });
+
+    $("#btn4").click(function(){
+        $("div").css({backgroundColor: "blue"}).fadeIn(5000);
+    });
+
+    $("#btn5").click(function(){
+        $("div").css({backgroundColor: "violet"}).fadeOut(5000)
+    });
+
+    $("#btn6").click(function(){
+        $("div").css({backgroundColor: "green"}).fadeTo("slow", 0.10);
+    });
+
+    $("#btn7").click(function(){
+        $("div").css({backgroundColor: "grey"}).fadeToggle(5000)        
+    });
+
+    $("#btn8").click(function(){
+        $("div").css({backgroundColor: "pink"}).slideUp(1000);
+    });
+
+    $("#btn9").click(function(){
+        $("div").css({backgroundColor: "purple"}).slideDown(1000);
+    });
+
+    $("#btn10").click(function(){
+        $("div").css({backgroundColor: "yellow"}).slideToggle(1000);
+    });
+
+    </script>
+    
+</body>
+</html>
